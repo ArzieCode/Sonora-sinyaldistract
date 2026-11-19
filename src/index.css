@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   SONORA — Central Scientific Design Tokens
+   ========================================================================== */
+:root {
+  --bg: #F4F1EA;
+  --panel: #FBFAF6;
+  --border: #D8D3C7;
+  --text-primary: #1E2226;
+  --text-secondary: #6A6F75;
+  --accent: #8C3B1F;
+  --signal-noisy: #9A9A93;
+  --signal-denoised: #1F5A4A;
+  --signal-reference: #B07A1E;
+  --error: #A32A2A;
+  --success: #2F6B3C;
+
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-size: 13px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Precision thin scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--signal-noisy);
+}
+
+/* Laboratory parameter sliders */
+input[type="range"].sonora-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border);
+  height: 3px;
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"].sonora-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: var(--accent);
+  border: 1px solid var(--panel);
+  cursor: pointer;
+}
+
+input[type="range"].sonora-slider::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: var(--accent);
+  border: 1px solid var(--panel);
+  cursor: pointer;
+}
+
+/* Plotly subtle modebar matching paper surface */
+.js-plotly-plot .plotly .modebar {
+  background: transparent !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

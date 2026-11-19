@@ -1,0 +1,6 @@
+{
+  "name": "SONORA — Signal Observation, Noise Optimization & Response Analysis",
+  "description": "Digital Signal Processing laboratory platform for audio signal analysis, digital filter experimentation, noise optimization, and exploratory EEG brainwave analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
